@@ -1,13 +1,35 @@
-TESTER = document.getElementById('tester');
+var graphDiv = document.getElementById('tester');
 
-Plotly.plot( TESTER, [{
-x: [1, 2, 3, 4, 5],
-y: [1, 2, 4, 8, 16] }], {
-margin: { t: 0 } } );
+var data = [{
+  x: [0],
+  y: [0],
+  type: 'scatter'
+}];
 
-var index = 0;
-setInterval(updateData, 1000);
+var layout = {
+  title: 'Voltage & Current traces',
+  xaxis: {
+    title: 'Time',
+    showgrid: true,
+    zeroline: true
+  },
+  yaxis: {
+    title: 'Voltage',
+    showline: true
+  },
+  //yaxis: {
+    //title: 'Current',
+    //showline: true
+  //}
+  
+};
+Plotly.newPlot(graphDiv, data, layout);
+yValue = 1;
+setInterval(appendData, 1000);
 
-function updateData(){
-    Plotly.react()
+function appendData(){
+    var xValue = Math.floor(Math.random() * 100);
+    Plotly.extendTraces(graphDiv, {y: yValue, x: xValue}, [0]); 
+
+
 }
