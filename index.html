@@ -8,9 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="graph" style="width:600px;height:250px;"></div>
+    <div class="header">
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">1 X 1</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#home">1 X 2</a>
+              <a href="#about">2 X 2</a>
+              <a href="#contact">3 X 2</a>
+              <a href="#left">2 X 3</a>
+            </div>
+        </div>
+    </div>
+    <div class="graph_container">
+        <div id="graph" style="width:400px;height:400px;"></div>
+        <div id="graph1" style="width:400px;height:400px;"></div>
+        <div id="graph2" style="width:400px;height:400px;"></div>
+        <div id="graph3" style="width:400px;height:400px;"></div>
+    </div>
+    
 
     <script src="plotly-latest.min.js"></script>
+    <script src="./graph_layout.js"></script>
     <script src="app.js"></script>    
 </body>
 </html>
