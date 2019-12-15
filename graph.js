@@ -1,0 +1,4 @@
+function getDivGraph(){
+    return Element;
+}
+

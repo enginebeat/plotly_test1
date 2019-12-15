@@ -1,4 +1,7 @@
 
+var graphContainer = document.querySelector('.graph_container');
+
+
 function rand() {
   return Math.random();
 }
@@ -51,11 +54,46 @@ window.onclick = function(event) {
 }
 
 function getSize(){
-  var element = document.querySelector('.graph_container');
-
-  console.log(element.clientHeight);
-  console.log(element.clientWidth);
+  console.log(graphContainer.clientHeight);
+  console.log(graphContainer.clientWidth);
 }
 
 getSize();
+
+var graphDiv = document.querySelector('graph_div');
+var menu = document.querySelector('.menu');
+menu.addEventListener('change', generateData);
+
+function generateData(event){
+  switch(menu.value){
+    case '1':
+      console.log('1');
+      graphContainer.style.gridTemplateColumns = "1fr"; 
+      graphContainer.style.gridTemplateRows = "1fr";
+      graphDiv.style.width = "600px";
+      break;
+    case '2':
+      console.log('2');
+      graphContainer.style.gridTemplateColumns = "2fr"; 
+      graphContainer.style.gridTemplateRows = "1fr";
+      break;
+    case '3':
+      console.log('3');
+      graphContainer.style.gridTemplateColumns = "2fr"; 
+      graphContainer.style.gridTemplateRows = "2fr";
+      break;
+    case '4':
+      console.log('4');
+      graphContainer.style.gridTemplateColumns = "3fr"; 
+      graphContainer.style.gridTemplateRows = "1fr";
+      break;
+    case '5':
+      console.log('5');
+      graphContainer.style.gridTemplateColumns = "2fr"; 
+      graphContainer.style.gridTemplateRows = "2fr";
+      break;
+    default:
+      break;
+  }
+}
 
